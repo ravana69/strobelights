@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+
+<!-- Mirrored from www.strobelights.co.za/colour-strobe by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Nov 2022 04:34:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+ 
+    <title>Online Colour Strobe Light | 2022</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MYSBVC0QN9"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MYSBVC0QN9');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">    
+    <meta name="description" content="This online strobe light is perfect for house parties or small events where a strobe effect is needed!">
+    <link rel="stylesheet" type="text/css" href="css/colour-strobe.css">
+    <link href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+</head>
+  
+<body>
+    <div id="click-body">
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+
+            <div class="power-switch">
+                <input type="checkbox" id=on_off_switch onchange="Strobe_On_Off()"/>
+                <div class="button">
+                <svg class="power-off">
+                    <use xlink:href="#line" class="line" />
+                    <use xlink:href="#circle" class="circle" />
+                </svg>
+                <svg class="power-on">
+                    <use xlink:href="#line" class="line" />
+                    <use xlink:href="#circle" class="circle" />
+                </svg>
+                </div>
+            </div>
+
+            <div class="menuheader">Themes: </div>
+
+                <br>
+                
+                <div class="Theme">
+                <span class="Nav-Text" >Custom</span>
+                <div class="square1" onclick="CustomClick()"></div>
+                </div>
+
+                <br>
+
+                <div class="Theme">
+                <span class="Nav-Text" >Random</span>
+                <div class="square2" onclick="RandomClick()"></div>
+                </div>
+
+                <br>
+
+                <div class="Theme">
+                <span class="Nav-Text" >Disco</span>
+                <div class="square3" onclick="DiscoClick()"></div>
+                </div>
+                <br>
+            
+            <div class="menuheader">Speed: </div>
+            <br>
+            <div class="slidecontainer" >
+                <input type="range" min="40" max="50" value="45" steps="1" class="slider" id="SpeedRange">
+            </div>
+
+            <br>
+            
+            <div id="Fullscreen">
+                <button id="Fullscreen-Btn" onclick="openFullscreen();">Fullscreen</button>
+                Hello
+            </div>
+        
+
+            <div class="menuheader" >Custom:</div>
+
+
+            <div style="width:auto; display:flex; margin: 0; padding: 20px; border-radius:20px; background-color: rgba(113, 113, 113, 0.616);"> <!-- Container box for the 6 colours -->
+                <div style="margin: 0 20% 0 0;"> <!-- First 3 colours-->
+                        <div class="dot_switch">
+                            <span class="dot_red" id="colour_dots"></span>
+                            <label class="switch">
+                                <input type="checkbox" id=switch1 checked>
+                                <span class="slider_colour round"></span>
+                            </label>
+                        </div>
+                        
+                        <br>
+
+                        <div class="dot_switch">
+                            <span class="dot_blue" id="colour_dots"></span>
+                            <label class="switch">
+                                <input type="checkbox" id=switch2 checked>
+                                <span class="slider_colour round"></span>
+                            </label>
+                        </div>
+
+                        <br>
+
+                        <div class="dot_switch">
+                            <span class="dot_yellow"></span>
+                            <label class="switch">
+                                <input type="checkbox" id=switch3 checked>
+                                <span class="slider_colour round"></span>
+                            </label>
+                        </div>
+
+                        <br>
+
+                        <div class="dot_switch">
+                            <span class="dot_lightgreen"></span>
+                            <label class="switch">
+                                <input type="checkbox" id=switch7 checked>
+                                <span class="slider_colour round"></span>
+                            </label>
+                        </div>
+                </div>
+
+                <div> <!-- Second 3 colours-->
+                    <div class="dot_switch">
+                        <span class="dot_green"></span>
+                        <label class="switch">
+                            <input type="checkbox" id=switch4 checked>
+                            <span class="slider_colour round"></span>
+                        </label>
+                    </div>
+                    
+                    <br>
+
+                    <div class="dot_switch">
+                        <span class="dot_orange"></span>
+                        <label class="switch">
+                            <input type="checkbox" id=switch5 checked>
+                            <span class="slider_colour round"></span>
+                        </label>
+                    </div>
+
+                    <br>
+
+                    <div class="dot_switch">
+                        <span class="dot_purple"></span>
+                        <label class="switch">
+                            <input type="checkbox" id=switch6 checked>
+                            <span class="slider_colour round"></span>
+                        </label>
+                    </div>
+
+                    <br>
+
+                    <div class="dot_switch">
+                        <span class="dot_pink"></span>
+                        <label class="switch">
+                            <input type="checkbox" id=switch8 checked>
+                            <span class="slider_colour round"></span>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+          
+    </div>
+
+    <div id="Right_mySidenav" class="Right_sidenav">
+        <br>
+        <span class="Right_Nav-Header"> 
+            <a href='index.html' style='text-decoration:none; color:white;'>HOME</a> 
+        </span>
+
+       
+        <a href="bw-strobe.html" target="_blank">
+            <div id="BW" class="square4">
+            </div>
+        </a>
+        <span class="Right_Nav-Text">B&W </span>
+        
+        <a href="ambient-strobe.html" target="_blank">
+            <div id="Ambient" class="square5">
+            </div>
+        </a>
+        <span class="Right_Nav-Text">Ambient </span>
+        
+        <div class="Social-Media">
+            <span class="Right_Nav-Text">Follow us: </span>
+            <a href="https://www.instagram.com/tv/CdF5jhfDk3p/?utm_source=ig_web_button_native_share" class="fa fa-instagram"></a>
+            <a href="https://www.instagram.com/tv/CdF5jhfDk3p/?utm_source=ig_web_button_native_share" class="fa fa-facebook"></a>
+            <a href="https://www.instagram.com/tv/CdF5jhfDk3p/?utm_source=ig_web_button_native_share" class="fa fa-twitter"></a>
+        </div>
+        
+
+        </div>
+    </div>
+
+    <script src="js/colour-strobe.js"></script>
+
+    
+      
+      <!-- SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" id="line">
+          <line x1="71" y1="44" x2="71" y2="68"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" id="circle">
+          <circle cx="100" cy="100" r="35"/>
+        </symbol>
+      </svg>
+      
+
+    <script>
+        
+        var BlackAndWhite = document.querySelector(".strobe_button");
+        var Colours = document.querySelector(".multi_strobe_button");
+        var Ambient = document.querySelector(".ambient_button");
+    
+        var hexColor = "#000000"
+        var delay = 0
+        var Hue = 240
+        var Disco_ticker = 0
+    
+        function ChangeColor() {
+            delay++;
+            
+            if (delay > 6) {
+                Hue += 2
+                BlackAndWhite.style.backgroundColor = getStrobe();
+                Colours.style.backgroundColor = getColour();
+                Ambient.style.backgroundColor = 'hsl(' + Hue + ', 55%, 60%)';
+                if (Hue == 360){
+                    Hue = 0
+                }
+                delay = 0;
+            }
+    
+            requestAnimationFrame(ChangeColor);
+        }           
+        function getStrobe() {
+            if (hexColor == "#000000") {
+                hexColor = "#FFFFFF";
+            } else {
+                hexColor = "#000000";
+            }
+    
+            return hexColor;
+        }
+        function getColour() {
+            var Disco_Colours = Array("#0FC0FC", "#7B1DAF", "#FF2FB9", "#D4FF47", "#FF9B03", "#FF3059", "#30FF83", "#9755EC", "#55ECBF", "#78F915") 
+    
+            var Disco_Random = Disco_Colours[Disco_ticker]
+            Disco_ticker ++;
+            
+            if(Disco_ticker == Disco_Colours.length){
+                Disco_ticker = 0;
+            }
+    
+        return Disco_Random
+        }
+    
+        ChangeColor();
+
+    </script>
+
+</body>
+
+
+<!-- Mirrored from www.strobelights.co.za/colour-strobe by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Nov 2022 04:34:19 GMT -->
+</html>

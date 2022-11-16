@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from www.strobelights.co.za/ambient-light by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Nov 2022 04:34:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+    <title>Ambient light and Mood Effects | Online</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MYSBVC0QN9"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MYSBVC0QN9');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">    
+    <meta name="description" content="This online ambient light is perfect for romantic dinners or setting the mood in your room.">
+    <link rel="stylesheet" type="text/css" href="css/ambient-strobe.css">
+    
+</head>
+  
+<body>
+    <a class='backbtn' href='index.html' id='backbtn'>&larr;</a>
+
+    <div id="click-body">
+    </div>
+ 
+    <div id="mySidenav" class="sidenav">
+        <div class="power-switch">
+            <input type="checkbox" id=on_off_switch onchange="Strobe_On_Off()"/>
+            <div class="button">
+            <svg class="power-off">
+                <use xlink:href="#line" class="line" />
+                <use xlink:href="#circle" class="circle" />
+            </svg>
+            <svg class="power-on">
+                <use xlink:href="#line" class="line" />
+                <use xlink:href="#circle" class="circle" />
+            </svg>
+            </div>
+        </div>
+        
+        <br><br>
+        <span class="menuheader" >Speed: </span>
+        <div class="slidecontainer">
+            <input type="range" min="40" max="50" value="45" steps="1" class="slider" id="SpeedRange">
+        </div>
+
+        <br><br><br>
+        <span class="menuheader" >Saturation: </span>
+        <div class="SaturationContainer">
+            <input type="range" min="20" max="80" value="55" steps="1" class="slider" id="SaturationRange">
+        </div>
+
+        <br><br><br>
+        <span class="menuheader" >Lightness: </span>
+        <div class="LightnessContainer">
+            <input type="range" min="20" max="80" value="60" steps="1" class="slider" id="LightnessRange">
+        </div>
+    </div>
+
+    <script src="js/ambient-strobe.js"></script>
+
+    <!-- SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" id="line">
+            <line x1="71" y1="44" x2="71" y2="68"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" id="circle">
+            <circle cx="100" cy="100" r="35"/>
+        </symbol>
+        </svg>
+</body>
+
+<!-- Mirrored from www.strobelights.co.za/ambient-light by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Nov 2022 04:34:21 GMT -->
+</html>

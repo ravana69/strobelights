@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from www.strobelights.co.za/black-and-white-strobe by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Nov 2022 04:34:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+    <title>Online Strobe Light | Flashing LED</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MYSBVC0QN9"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MYSBVC0QN9');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">    
+    <meta name="description" content="This online strobe light is perfect for house parties or small events where a strobe effect is needed!">
+    <link rel="stylesheet" type="text/css" href="css/bw-strobe.css">
+    <link href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+</head>
+  
+<body>
+
+    <div id="click-body"> <!-- This div covers the entire page and is used to open and close the side nav -->
+    </div>
+
+    <div id="mySidenav">
+         
+        <div class="power-switch">
+
+            <input type="checkbox" id=on_off_switch onchange="Strobe_On_Off()"/>
+
+            <div class="button">
+                <svg class="power-off">
+                    <use xlink:href="#line" class="line" />
+                    <use xlink:href="#circle" class="circle" />
+                </svg>
+                
+                <svg class="power-on">
+                    <use xlink:href="#line" class="line" />
+                    <use xlink:href="#circle" class="circle" />
+                </svg>
+            </div>
+
+        </div>
+
+        <div id="speed-slider">
+            <h2 class="menu-headings">Speed:</h2>
+            <input type="range" min="40" max="50" value="45" steps="1" id="SpeedRange">
+        </div>
+
+        <div id="nav-footer">
+
+            <div id="more-effects">
+                <h2 class="menu-headings">More effects:</h2>
+                <div id="taster-buttons">
+                    <div class="ambient_button">Ambient</div>
+                    <div class="multi_strobe_button">Colour</div>
+                </div>
+            </div>
+
+            <div id="follow-us">
+
+                <h2 class="menu-headings">Follow Us:</h2>
+
+                <div id="follow-us-buttons">
+                    <a target="_blank" href="https://www.facebook.com/OnlineStrobeLights/"><i id="nav-facebook-icon" class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://twitter.com/bernard_wiese"><i id="nav-twitter-icon" class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/tv/CdF5jhfDk3p/?utm_source=ig_web_button_native_share"><i id="nav-instagram-icon" class="fa-brands fa-instagram-square" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="home-button">
+        <a href='index.html'>
+            <svg id="home-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.5 450.5 512.3 453.1 512 455.8V472C512 494.1 494.1 512 472 512H456C454.9 512 453.8 511.1 452.7 511.9C451.3 511.1 449.9 512 448.5 512H392C369.9 512 352 494.1 352 472V384C352 366.3 337.7 352 320 352H256C238.3 352 224 366.3 224 384V472C224 494.1 206.1 512 184 512H128.1C126.6 512 125.1 511.9 123.6 511.8C122.4 511.9 121.2 512 120 512H104C81.91 512 64 494.1 64 472V360C64 359.1 64.03 358.1 64.09 357.2V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5L575.8 255.5z"/>
+            </svg>
+        </a>
+    </div>
+
+
+    <!-------------------------------------------------------------------------------------- ON OFF SWITCH -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" id="line">
+            <line x1="71" y1="44" x2="71" y2="68"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" id="circle">
+            <circle cx="100" cy="100" r="35"/>
+        </symbol>
+    </svg>
+
+
+    <!-------------------------------------------------------------------------------------- BW STROBE JS -->
+    <script src="js/bw-strobe.js"></script>
+
+    <script async src="../kit.fontawesome.com/1075bc62ed.js" crossorigin="anonymous"></script> <!--social media icons script-->
+
+    <script>
+        
+        var BlackAndWhite = document.querySelector(".strobe_button");
+        var Colours = document.querySelector(".multi_strobe_button");
+        var Ambient = document.querySelector(".ambient_button");
+    
+        var hexColor = "#000000"
+        var delay = 0
+        var Hue = 240
+        var Disco_ticker = 0
+    
+        function ChangeColor() {
+            delay++;
+            
+            if (delay > 6) {
+                Hue += 2
+                BlackAndWhite.style.backgroundColor = getStrobe();
+                Colours.style.backgroundColor = getColour();
+                Ambient.style.backgroundColor = 'hsl(' + Hue + ', 55%, 60%)';
+                if (Hue == 360){
+                    Hue = 0
+                }
+                delay = 0;
+            }
+    
+            requestAnimationFrame(ChangeColor);
+        }
+
+        function getStrobe() {
+            if (hexColor == "#000000") {
+                hexColor = "#FFFFFF";
+            } else {
+                hexColor = "#000000";
+            }
+    
+            return hexColor;
+        }
+
+        function getColour() {
+            var Disco_Colours = Array("#0FC0FC", "#7B1DAF", "#FF2FB9", "#D4FF47", "#FF9B03", "#FF3059", "#30FF83", "#9755EC", "#55ECBF", "#78F915") 
+    
+            var Disco_Random = Disco_Colours[Disco_ticker]
+            Disco_ticker ++;
+            
+            if(Disco_ticker == Disco_Colours.length){
+                Disco_ticker = 0;
+            }
+    
+            return Disco_Random
+        }
+    
+        ChangeColor();
+
+    </script>
+
+</body>
+
+
+<!-- Mirrored from www.strobelights.co.za/black-and-white-strobe by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Nov 2022 04:34:16 GMT -->
+</html>

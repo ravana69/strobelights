@@ -1,0 +1,305 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: helvetica;
+  overflow: auto;
+}
+
+button, textarea, input, select, a { 
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent; /*Prevents ugly highlight when mobile links are clcked*/
+}
+
+#click-body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  background-color: rgba(255, 255, 0, 0);
+}
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------- Left Sidenav */
+
+#follow-us {
+  width: 100%;
+}
+
+#follow-us-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#follow-us-buttons a{
+  margin: 0 10px;
+}
+
+#nav-facebook-icon, #nav-twitter-icon, #nav-pinterest-icon, #nav-instagram-icon {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+}
+
+#nav-facebook-icon:hover {
+  color: #4267b2;
+}
+
+#nav-twitter-icon:hover {
+  color: #1da1f2;
+}
+
+#nav-pinterest-icon:hover {
+  color: #E60023;
+}
+
+#nav-instagram-icon:hover {
+  color: #bc2a8d;
+}
+
+#nav-footer {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 285px;
+  border-top: 2px rgb(215, 215, 215) solid;
+}
+
+.menu-headings {
+  margin: 30px 0 10px 0;
+  color: white;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+#taster-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#taster-buttons div {
+  margin: 5px;
+  width: 100px;
+  height: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: white 2px solid;
+  color:black;
+  font-weight: 600;
+  background-color: #1da1f2;
+}
+
+#mySidenav {
+  margin: 0;
+  padding: 0 20px;
+  height: 100%;
+  width: 290px;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(50, 50, 50);
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 100;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 3px 3px 6px 2px rgba(55, 55, 55, 0.308);
+}
+
+/*-- Speed Slider --*/
+#SpeedRange {
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 13px;
+  border-radius: 13px;  
+  background: #808080;
+  outline: none;
+  cursor: pointer;
+}
+
+#SpeedRange::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 22px;
+height: 22px;
+border-radius: 50%; 
+background: rgb(115, 110, 110);
+cursor: pointer;
+}
+
+/*-------------------------------------------------------- POWER BUTTON ----------------------------------------------------------------*/
+.power-switch {
+  margin: 20px 0 0 0;
+  padding: 0;
+  width: 100%;
+  height: 100px;
+  --color-invert: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  margin: 0 0 0 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.button:after {
+content: "";
+width: 100%;
+height: 100%;
+position: absolute;
+background: radial-gradient(circle closest-side, var(--color-invert), transparent);
+filter: blur(20px);
+opacity: 0;
+transition: opacity 1s ease, transform 1s ease;
+transform: perspective(1px) translateZ(0);
+backface-visibility: hidden;
+}
+.power-on, .power-off {
+height: 100%;
+width: 100%;
+position: absolute;
+z-index: 1;
+fill: none;
+stroke: var(--color-invert);
+stroke-width: 8px;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+.line{
+opacity: 0.2;
+}
+.circle {
+opacity: 0.2;
+transform: rotate(-58deg);
+transform-origin: center 80px;
+stroke-dasharray: 220;
+stroke-dashoffset: 40;
+}
+.power-on {
+filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, .8));
+}
+.power-switch .button .power-on .line {
+  transition: opacity 0.3s ease 1s;
+}
+.power-switch .button .power-on .circle {
+  opacity: 1;
+  stroke-dashoffset: 220;
+  transition: transform 0s ease, stroke-dashoffset 1s ease 0s;
+}
+
+.power-switch input {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  z-index: 2;
+  cursor: pointer;
+  opacity: 0; /* Ensures that the check box cannot be seen */
+}
+
+.power-switch input:checked + .button:after {
+opacity: 0.15;
+transform: scale(2) perspective(1px) translateZ(0);
+backface-visibility: hidden;
+transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.power-switch input:checked + .button .power-on, .power-switch input:checked + .button .power-off {
+animation: click-animation 0.3s ease forwards;
+transform: scale(1);
+}
+
+.power-switch input:checked + .button .power-on .line, .power-switch input:checked + .button .power-off .line {
+animation: line-animation 0.8s ease-in forwards;
+}
+
+/* When swithced on: */
+.power-switch input:checked + .button .power-on .line {
+opacity: 1;
+transition: opacity 0.05s ease-in 0.55s;
+}
+
+.power-switch input:checked + .button .power-on .circle {
+stroke-dashoffset: 40;
+transition: transform 0.4s ease 0.2s, stroke-dashoffset 0.4s ease 0.2s;
+}
+
+/* Animation */
+@keyframes line-animation {
+0% {
+transform: translateY(0);
+}
+10% {
+transform: translateY(4px);
+}
+40% {
+transform: translateY(-8px);
+}
+60% {
+transform: translateY(-8px);
+}
+85% {
+transform: translateY(4px);
+}
+100% {
+transform: translateY(0px);
+}
+}
+@keyframes click-animation {
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(0.9);
+}
+100% {
+transform: scale(1);
+}
+}
+
+/* ------------------------------------------------------ RIGHT NAV ---------------------------------------------------- */
+#home-button {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  min-height: 45px;
+  min-width: 45px;
+  border-radius: 30px;
+  background-color: rgb(50, 50, 50);
+  border: 2px white solid;
+  transition: 0.5s;
+  z-index: 100000;
+  box-shadow: 3px 3px 6px 2px rgba(55, 55, 55, 0.308);
+}
+
+#home-button-icon {
+  padding: 10px;
+  width: 25px;
+  fill: #fff;
+}
+
+
+/*----------------------------------------- Desktop site --------------------------------------------------------------------*/
+@media only screen and (min-width: 1000px) {
+
+}

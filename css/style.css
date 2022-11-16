@@ -1,0 +1,399 @@
+/*----------------------------------------- Mobile site --------------------------------------------------------------------*/
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    font-size: 16px;
+    font-family: helvetica;
+    color: rgb(0, 0, 0);
+  }
+
+  button, textarea, input, select, a { 
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent; /*Prevents ugly highlight when mobile links are clcked*/
+  }
+
+  #home {
+    margin: 0;
+    padding: 15% 3%;
+    text-align: center;
+  }
+
+  #safety, #about, #privacy {
+    margin: 0;
+    padding: 10% 3%;
+  }
+
+  #youtubes {
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  #youtubes iframe{
+    margin: 20px 0;
+    padding: 0;
+    width: 80%;
+    height: 200px;
+  }
+
+  #strobemenu {
+    margin: 0;
+    padding: 0;
+    display: block;
+    text-align: center;
+  
+    background-color: rgba(255, 255, 0, 0);
+  }
+
+  #strobemenu div {
+    margin: 70px 30%;
+    padding: 0;
+    width: 40%;
+    height: 50px;
+    border-radius: 20px;
+    text-align: center;
+
+    background-color: rgba(255, 0, 0, 0);
+  }
+
+  #strobemenu div div {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    border: 2px solid rgb(0, 0, 0);
+    text-align: center;
+  }
+
+  a:hover {
+    color:rgb(0, 0, 0);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+  }
+
+  #safety h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  #safety h2 {
+    font-size: 23px;
+  }
+
+  #safety h3 {
+    font-size: 15px;
+  }
+  
+
+
+
+
+  /* --------------- Header and navigtion menu -------------------- */
+  
+  header {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 60px;
+  }
+
+  #welcometext {
+    color: #fff;
+    text-shadow:
+      2px 2px 7px #fff,
+      0 2px 102px rgb(63, 168, 172),
+      0 2px 151px rgb(63, 168, 172);
+  }
+  
+  #logo h1{
+    position: absolute;
+    z-index: 600;
+    top: 15px;
+    left: 3%;
+    font-size: 25px;
+    color: #fff;
+  }
+  
+  nav {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 60px;
+  }
+  
+  #cover {
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(76, 76, 76);
+    z-index: 500;
+  }
+  
+  #menu {
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: absolute;
+    top: -1000px;
+    height: 50%;
+    width: 100%;
+    transition: 0.3s;
+    z-index: 300;
+  }
+  
+  #menu.open {
+    top: 60px;
+  }
+  
+  #menu a {
+    display: block;
+    position: relative;
+    top: auto;
+    height: 50%;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 600;
+    border-bottom: rgb(36, 36, 36) 2px solid;
+    z-index: 0;
+    background-color: #8b8b8b;
+  }
+
+  #menu a:hover {
+    background-color: #4c7a9a;
+  }
+  
+  #menubtnborder {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    /*border: solid black 1px;*/
+    z-index: 1000;
+    cursor: pointer;
+  }
+  
+  #menubtn,
+  #menubtn::before,
+  #menubtn::after{
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background-color: #fff;
+    transition:0.2s;
+    -webkit-transition:0.2s;
+    z-index: 500;
+  }
+  
+  #menubtn {
+    top: 14px; /*plug and play values to get into the menubtnborder*/
+    left: 1px;
+  }
+  
+  #menubtn::before {
+    content: "";
+    transform: translateY(-7px);
+  }
+  
+  #menubtn::after{
+    content: "";
+    transform: translateY(7px);
+  }
+  
+  #menubtnborder.open #menubtn {
+    width: 0px;
+    background: transparent;
+    box-shadow: none;
+  }
+  #menubtnborder.open #menubtn::before {
+    width: 25px;
+    transform: rotate(45deg) translate(1px, -1px);
+  }
+  #menubtnborder.open #menubtn::after {
+    width: 25px;
+    transform: rotate(-45deg) translate(1px, 1px);
+  }
+  
+  .vertical-align {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top:50%;
+    left:50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+
+  
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  /*----------------------------------------- Desktop site --------------------------------------------------------------------*/
+  @media only screen and (min-width: 1000px) {
+    
+    #safety, #about, #privacy {
+      margin: 0;
+      padding: 5% 20%;
+    }
+
+    /* youtube links */
+
+    #youtubes iframe{
+      margin: 20px 30%;
+      padding: 0;
+      width: 40%;
+      height: 200px;
+    }
+
+
+
+    
+    /* ---------- the three buttons to go the the strobe lights -----*/
+    
+    #strobemenu {
+      margin: 50px 0px 80px 0px;
+      padding: 0;
+      display: inline-flex;
+
+      background-color: rgba(255, 255, 0, 0);
+    }
+
+    #strobemenu div {
+      margin: 0 60px;
+      width: 100px;
+      height: 50px;
+      text-align: center;
+
+      background-color: rgba(0, 0, 255, 0);
+    }
+
+    #strobemenu div div:hover {
+      transform:scale(1.15);
+      transition: 0.2s;
+    }
+
+  
+
+
+
+
+    /*------------------- Header and navigation* -----------------*/
+  
+    #cover {
+      z-index: -2;
+      border: none;
+    }
+
+    #menu {
+      margin: 0;
+      padding: 0;
+      width: 400px;
+      display: flex;
+      top: 0;
+      right: 0;
+      justify-content: flex-end;
+      align-items: center;
+      height: 60px;
+      background-color: #55acee00;
+    }
+
+    #menu.open {
+      top: 0px;
+    }
+
+    #menu a {
+      margin: 0 10px;
+      padding: 0;
+      background-color: #3b589800;
+      border-bottom: none;
+      font-size: 20px;
+    }
+
+    #menu a:hover {
+      background-color: #15151500;
+    }
+    
+    .vertical-align {
+      margin: 0;
+      padding: 0;
+      width: auto;
+      height: auto;
+      color: white;
+      position: absolute;
+      top:50%;
+      left:50%;
+      background-color: none;
+    }
+
+    .vertical-align:hover {
+      color: #88cbff;
+    }
+  
+    #menubtnborder {
+      display: none;
+    }
+  }
+
+  
+/*------------------- *Media Files* -----------------*/
+
+
+  .fa {
+    padding: 20px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+
+  .fa:hover {
+      opacity: 0.7;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }

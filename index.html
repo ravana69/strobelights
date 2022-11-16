@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from www.strobelights.co.za/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Nov 2022 04:34:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+    <title>Online Strobe Light and Effects | 2022</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MYSBVC0QN9"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MYSBVC0QN9');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">    
+    <meta name="description" content="This online light effects website provides free light effects, which is perfect for house parties, romantic dates, and background moods.">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header> <!-- Any changes applied to the header needs to be applied to all pages on website, except for the strobe pages -->
+
+        <a href='index.html' id='logo'>
+            <h1>Online Strobe Light</h1>
+        </a>
+
+        <nav>
+            <div id="cover"></div>
+            
+            <div id="menubtnborder"><div id="menubtn"></div></div>
+
+            <div id="menu">
+                <a href='index.html'><div class="vertical-align">Home</div></a>
+                <a href='safety.html'><div class="vertical-align">Safety</div></a>
+                <a href='about.html'><div class="vertical-align">About</div></a>
+            </div>
+        </nav>
+
+    </header>
+
+    <section id="home">
+
+        <h1 style="font-size: 40px; color:rgb(0, 0, 0);">Select your strobe light effect below:</h1>
+
+        <div id="strobemenu">
+
+            <div>
+                <a href='black-and-white-strobe.html'>
+                    <div class="strobe_button">
+                    </div>
+                </a>
+                B&W
+            </div>
+
+            <div>
+                <a href='colour-strobe.html'>
+                    <div class="multi_strobe_button">
+                    </div>
+                </a>
+                Disco
+            </div>
+
+            <div>
+                <a href='ambient-light.html'>
+                    <div class="ambient_button">
+                        
+                    </div>
+                </a>
+                Ambient
+            </div>
+
+        </div>
+
+        <br><br><br>
+
+        <p style="color:red; font-size: 15px; padding: 0 0 50px 0;">WARNING! This website contains flashing images and can cause brain seizures. Please read our safety condition <a href='safety.html' style='color: red;'>here</a>. </p>
+
+        <br><br>
+
+        <div id="youtubes">
+
+            <p style="font-size: 20px;">You can also watch our YouTube videos below!</p>
+            
+            <iframe
+            src="https://www.youtube.com/embed/iRkxw4rq0lI?loop=1">
+            </iframe>
+
+            <iframe
+            src="https://www.youtube.com/embed/kREKJVAL2cg?loop=1">
+            </iframe>
+            
+            <iframe
+            src="https://www.youtube.com/embed/gpDSCJ2Yo9g?loop=1">
+            </iframe>
+
+        </div>
+
+        <p style="font-size: 20px;">Follow us on Instagram, Facebook or Twitter to stay updated with new effects released weekly!</p>
+
+        <div id="Social Media">
+            <a href="https://www.instagram.com/tv/CdF5jhfDk3p/?utm_source=ig_web_button_native_share" class="fa fa-instagram"></a>
+            <a href="https://www.facebook.com/Online-Strobes-100998442661647" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/bernard_wiese" class="fa fa-twitter"></a>
+        </div>
+        
+    </section>
+
+    <footer include-html="footer.html"></footer>
+
+    <script src="js/main.js"></script>
+    
+    <script> includeHTML(); </script>
+
+    <script>
+        var BlackAndWhite = document.querySelector(".strobe_button");
+        var Colours = document.querySelector(".multi_strobe_button");
+        var Ambient = document.querySelector(".ambient_button");
+    
+        var hexColor = "#000000"
+        var delay = 0
+        var Hue = 240
+        var Disco_ticker = 0
+    
+        function ChangeColor() {
+            delay++;
+            
+            if (delay > 6) {
+                Hue += 2
+                BlackAndWhite.style.backgroundColor = getStrobe();
+                Colours.style.backgroundColor = getColour();
+                Ambient.style.backgroundColor = 'hsl(' + Hue + ', 55%, 60%)';
+                if (Hue == 360){
+                    Hue = 0
+                }
+                delay = 0;
+            }
+    
+            requestAnimationFrame(ChangeColor);
+        }           
+        function getStrobe() {
+            if (hexColor == "#000000") {
+                hexColor = "#FFFFFF";
+            } else {
+                hexColor = "#000000";
+            }
+    
+            return hexColor;
+        }
+        function getColour() {
+            var Disco_Colours = Array("#0FC0FC", "#7B1DAF", "#FF2FB9", "#D4FF47", "#FF9B03", "#FF3059", "#30FF83", "#9755EC", "#55ECBF", "#78F915") 
+    
+            var Disco_Random = Disco_Colours[Disco_ticker]
+            Disco_ticker ++;
+            
+            if(Disco_ticker == Disco_Colours.length){
+                Disco_ticker = 0;
+            }
+    
+        return Disco_Random
+        }
+    
+        ChangeColor();
+    </script>
+
+</body>
+
+
+<!-- Mirrored from www.strobelights.co.za/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Nov 2022 04:34:13 GMT -->
+</html>
